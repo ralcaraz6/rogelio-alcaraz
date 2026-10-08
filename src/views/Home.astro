@@ -28,7 +28,7 @@ const copy = ui[lang];
           <li>
             <a class="history-entry" href={href(lang, `/about/${item.slug}/`)}>
               <span class="meta history-period">{t(item.period, lang)}</span>
-              <span class="history-title">{t(item.title, lang)}<span aria-hidden="true"> →</span></span>
+              <span class="history-title">{t(item.title, lang)} <span class="flag">{item.flag}</span><span aria-hidden="true"> →</span></span>
               <span class="history-summary">{t(item.summary, lang)}</span>
             </a>
           </li>

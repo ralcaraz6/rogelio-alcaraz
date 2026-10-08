@@ -95,6 +95,7 @@ dd { margin: 0 0 .65rem; }
 .history-title { font-weight: 600; }
 .history-summary { color: var(--ink-muted); grid-column: 2; font-size: .9rem; }
 .history-entry:hover .history-title { text-decoration: underline; }
+.flag { display: inline-block; font-size: 1.1em; line-height: 1; vertical-align: -0.12em; }
 .history-background { color: var(--ink-muted); font-size: .9rem; }
 .history-body { max-width: 72ch; }
 

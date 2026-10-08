@@ -92,7 +92,100 @@ export const ui = {
 
 export const history = [
   {
+    slug: "algoryme",
+    flag: "🇪🇸",
+    period: { en: "2025–Now", es: "2025–Actualidad" },
+    title: {
+      en: "Algoryme · Freelance Senior Data & AI Engineer, Founder",
+      es: "Algoryme · Senior Data & AI Engineer freelance, fundador",
+    },
+    summary: {
+      en: "My studio in Barcelona. LLM, RAG and agentic systems connected to client data.",
+      es: "Mi estudio en Barcelona. Sistemas LLM, RAG y agénticos conectados a los datos del cliente.",
+    },
+    body: {
+      en: [
+        "Since January 2025 I run Algoryme, my studio in Barcelona. I own every engagement end to end: discovery, solution design, implementation in Python and SQL, deployment, communication with stakeholders and handover.",
+        "I build LLM, RAG and agentic systems connected to client databases and APIs, together with the data pipelines and predictive models underneath them. Clients so far include an investment fund and a second-hand marketplace.",
+      ],
+      es: [
+        "Desde enero de 2025 dirijo Algoryme, mi estudio en Barcelona. Llevo cada proyecto de principio a fin: descubrimiento, diseño de la solución, implementación en Python y SQL, despliegue, comunicación con los stakeholders y traspaso.",
+        "Construyo sistemas LLM, RAG y agénticos conectados a las bases de datos y APIs del cliente, junto con los pipelines de datos y los modelos predictivos que hay debajo. Entre los clientes, un fondo de inversión y un marketplace de segunda mano.",
+      ],
+    },
+    link: "https://algoryme.com",
+  },
+  {
+    slug: "mable",
+    flag: "🇦🇺",
+    period: { en: "2023–2024", es: "2023–2024" },
+    title: {
+      en: "Mable · Senior Data Scientist & Analytics Engineer",
+      es: "Mable · Senior Data Scientist & Analytics Engineer",
+    },
+    summary: {
+      en: "B2B analytics, predictive models and C-level reporting for a care services platform in Sydney.",
+      es: "Analítica B2B, modelos predictivos y reporting a dirección para una plataforma de cuidados en Sídney.",
+    },
+    body: {
+      en: [
+        "From August 2023 to August 2024 I worked at Mable, an online platform in Sydney that connects clients with care support providers.",
+        "I led B2B analytics for the CGO and the Head of Partnerships: lead scoring, churn, attribution and conversion-likelihood models.",
+        "I built an LLM-based model to identify support workers in stressful client interactions so the team could offer them tailored counselling. I delivered the monthly C-level reporting with SQL and Tableau, defined KPIs with the commercial teams and mentored the analysts.",
+      ],
+      es: [
+        "De agosto de 2023 a agosto de 2024 trabajé en Mable, una plataforma online de Sídney que conecta a clientes con profesionales de cuidados.",
+        "Dirigí la analítica B2B para el CGO y el Head of Partnerships: modelos de lead scoring, churn, atribución y probabilidad de conversión.",
+        "Construí un modelo basado en LLM que identifica a los cuidadores en interacciones estresantes con clientes para que el equipo pudiera ofrecerles apoyo a medida. Llevaba el reporting mensual a dirección con SQL y Tableau, definí KPI con los equipos comerciales e hice de mentor de los analistas.",
+      ],
+    },
+  },
+  {
+    slug: "vitable",
+    flag: "🇦🇺",
+    period: { en: "2020–2023", es: "2020–2023" },
+    title: {
+      en: "Vitable · Senior Data Analyst, previously Growth Marketer",
+      es: "Vitable · Senior Data Analyst, antes Growth Marketer",
+    },
+    summary: {
+      en: "Health-tech startup in Sydney. From growth and affiliates to predictive models and BI.",
+      es: "Startup de health-tech en Sídney. De growth y afiliados a modelos predictivos y BI.",
+    },
+    body: {
+      en: [
+        "Vitable is a health-tech startup in Sydney with 25+ employees and $15m+ annual revenue. I joined in January 2020 as growth marketer and affiliates manager: I built an ambassador programme with 1,000+ partners that drove 25% of sales, and launched a referral programme that contributed 12%.",
+        "From May 2022 to July 2023 I was senior data analyst. I built a probabilistic courier-selection model using price, historical delivery time and error rate; operations adopted it and it cut shipping time and cost by 5%.",
+        "I also built predictive models in SQL and Python, including detection of incorrect home addresses, Tableau dashboards for the core KPIs that saved 25+ hours a week of manual reporting, and Excel and Zapier automations that made operational processes about 80% more efficient.",
+      ],
+      es: [
+        "Vitable es una startup de health-tech de Sídney con más de 25 empleados y más de 15 M$ de facturación anual. Entré en enero de 2020 como growth marketer y responsable de afiliados: monté un programa de embajadores con más de 1.000 partners que generaba el 25% de las ventas, y lancé un programa de referidos que aportaba el 12%.",
+        "De mayo de 2022 a julio de 2023 fui senior data analyst. Construí un modelo probabilístico de selección de transportista a partir del precio, el tiempo de entrega histórico y la tasa de error; operaciones lo adoptó y redujo un 5% el tiempo y el coste de envío.",
+        "También construí modelos predictivos en SQL y Python, entre ellos uno que detecta direcciones de envío incorrectas, dashboards de Tableau con los KPI principales que ahorraban más de 25 horas semanales de reporting manual, y automatizaciones con Excel y Zapier que hicieron los procesos operativos cerca de un 80% más eficientes.",
+      ],
+    },
+  },
+  {
+    slug: "abitari",
+    flag: "🇪🇸",
+    period: { en: "2019", es: "2019" },
+    title: { en: "Abitari · Growth Marketer", es: "Abitari · Growth Marketer" },
+    summary: {
+      en: "Segmentation, competitive research and a website redesign that increased leads by 225%.",
+      es: "Segmentación, análisis de competencia y un rediseño de la web que subió los leads un 225%.",
+    },
+    body: {
+      en: [
+        "From February to December 2019, in Barcelona, I led customer segmentation, competitive research and a website redesign that increased leads by 225%. I also built the HubSpot and marketing automations.",
+      ],
+      es: [
+        "De febrero a diciembre de 2019, en Barcelona, llevé la segmentación de clientes, el análisis de competencia y un rediseño de la web que subió los leads un 225%. También monté las automatizaciones de HubSpot y de marketing.",
+      ],
+    },
+  },
+  {
     slug: "restia",
+    flag: "🇪🇸",
     period: { en: "2017–2019", es: "2017–2019" },
     title: { en: "Restia · Co-founder & CEO", es: "Restia · Cofundador y CEO" },
     summary: {
@@ -111,68 +204,6 @@ export const history = [
         "Antes de Restia fui product expert en Samsung y analista de marketing junior en La Caixa.",
       ],
     },
-  },
-  {
-    slug: "growth",
-    period: { en: "2019–2022", es: "2019–2022" },
-    title: { en: "Growth · Abitari and Vitable", es: "Growth · Abitari y Vitable" },
-    summary: {
-      en: "Segmentation, marketing automation and partner programmes.",
-      es: "Segmentación, automatización de marketing y programas de partners.",
-    },
-    body: {
-      en: [
-        "At Abitari, in Barcelona, I led customer segmentation, competitive research and a website redesign that increased leads by 225%. I also built the HubSpot and marketing automations.",
-        "In 2020 I moved to Sydney to join Vitable, a health-tech startup. As growth marketer and affiliates manager I built an ambassador programme with 1,000+ partners that drove 25% of sales, and launched a referral programme that contributed 12%.",
-      ],
-      es: [
-        "En Abitari, en Barcelona, llevé la segmentación de clientes, el análisis de competencia y un rediseño de la web que subió los leads un 225%. También monté las automatizaciones de HubSpot y de marketing.",
-        "En 2020 me fui a Sídney para entrar en Vitable, una startup de health-tech. Como growth marketer y responsable de afiliados monté un programa de embajadores con más de 1.000 partners que generaba el 25% de las ventas, y lancé un programa de referidos que aportaba el 12%.",
-      ],
-    },
-  },
-  {
-    slug: "sydney",
-    period: { en: "2022–2024", es: "2022–2024" },
-    title: { en: "Sydney · Vitable and Mable", es: "Sídney · Vitable y Mable" },
-    summary: {
-      en: "Senior data analyst and data scientist: predictive models, BI and C-level reporting.",
-      es: "Senior data analyst y data scientist: modelos predictivos, BI y reporting a dirección.",
-    },
-    body: {
-      en: [
-        "As senior data analyst at Vitable (25+ employees, $15m+ annual revenue) I built a probabilistic courier-selection model using price, historical delivery time and error rate. Operations adopted it and it cut shipping time and cost by 5%.",
-        "I also built predictive models in SQL and Python, including detection of incorrect home addresses, and Tableau dashboards for the core KPIs that saved 25+ hours a week of manual reporting.",
-        "At Mable, an online platform that connects clients with care support providers, I led B2B analytics for the CGO and the Head of Partnerships: lead scoring, churn, attribution and conversion-likelihood models.",
-        "I built an LLM-based model to identify support workers in stressful client interactions so the team could offer them tailored counselling. I delivered the monthly C-level reporting and mentored the analysts.",
-      ],
-      es: [
-        "Como senior data analyst en Vitable (más de 25 empleados y más de 15 M$ de facturación anual) construí un modelo probabilístico de selección de transportista a partir del precio, el tiempo de entrega histórico y la tasa de error. Operaciones lo adoptó y redujo un 5% el tiempo y el coste de envío.",
-        "También construí modelos predictivos en SQL y Python, entre ellos uno que detecta direcciones de envío incorrectas, y dashboards de Tableau con los KPI principales que ahorraban más de 25 horas semanales de reporting manual.",
-        "En Mable, una plataforma que conecta a clientes con profesionales de cuidados, dirigí la analítica B2B para el CGO y el Head of Partnerships: modelos de lead scoring, churn, atribución y probabilidad de conversión.",
-        "Construí un modelo basado en LLM que identifica a los cuidadores en interacciones estresantes con clientes para que el equipo pudiera ofrecerles apoyo a medida. Llevaba el reporting mensual a dirección y hacía de mentor de los analistas.",
-      ],
-    },
-  },
-  {
-    slug: "algoryme",
-    period: { en: "Own studio · Now", es: "Estudio propio · Ahora" },
-    title: { en: "Algoryme", es: "Algoryme" },
-    summary: {
-      en: "Freelance data and AI engineering. LLM, RAG and agentic systems connected to client data.",
-      es: "Ingeniería de datos e IA en freelance. Sistemas LLM, RAG y agénticos conectados a los datos del cliente.",
-    },
-    body: {
-      en: [
-        "Since January 2025 I run Algoryme, my studio in Barcelona. I own every engagement end to end: discovery, solution design, implementation in Python and SQL, deployment, communication with stakeholders and handover.",
-        "I build LLM, RAG and agentic systems connected to client databases and APIs, together with the data pipelines and predictive models underneath them. Clients so far include an investment fund and a second-hand marketplace.",
-      ],
-      es: [
-        "Desde enero de 2025 dirijo Algoryme, mi estudio en Barcelona. Llevo cada proyecto de principio a fin: descubrimiento, diseño de la solución, implementación en Python y SQL, despliegue, comunicación con los stakeholders y traspaso.",
-        "Construyo sistemas LLM, RAG y agénticos conectados a las bases de datos y APIs del cliente, junto con los pipelines de datos y los modelos predictivos que hay debajo. Entre los clientes, un fondo de inversión y un marketplace de segunda mano.",
-      ],
-    },
-    link: "https://algoryme.com",
   },
 ];
 
@@ -307,7 +338,7 @@ export const earlier = [
       en: "An LLM-based model that identifies support workers in stressful client interactions, so the team could offer them tailored counselling.",
       es: "Un modelo basado en LLM que identifica a los cuidadores en interacciones estresantes con clientes, para que el equipo pudiera ofrecerles apoyo a medida.",
     },
-    history: "sydney",
+    history: "mable",
   },
   {
     title: { en: "Mable · B2B growth models", es: "Mable · Modelos de crecimiento B2B" },
@@ -315,7 +346,7 @@ export const earlier = [
       en: "Lead scoring, churn, attribution and conversion-likelihood models for the CGO and the Head of Partnerships.",
       es: "Modelos de lead scoring, churn, atribución y probabilidad de conversión para el CGO y el Head of Partnerships.",
     },
-    history: "sydney",
+    history: "mable",
   },
   {
     title: { en: "Vitable · Courier selection", es: "Vitable · Selección de transportista" },
@@ -323,7 +354,7 @@ export const earlier = [
       en: "A probabilistic model using price, historical delivery time and error rate. Operations adopted it and it cut shipping time and cost by 5%.",
       es: "Un modelo probabilístico con precio, tiempo de entrega histórico y tasa de error. Operaciones lo adoptó y redujo un 5% el tiempo y el coste de envío.",
     },
-    history: "sydney",
+    history: "vitable",
   },
   {
     title: { en: "Vitable · Reporting", es: "Vitable · Reporting" },
@@ -331,7 +362,7 @@ export const earlier = [
       en: "Tableau dashboards for the core KPIs that saved 25+ hours a week of manual reporting across departments.",
       es: "Dashboards de Tableau con los KPI principales que ahorraban más de 25 horas semanales de reporting manual entre departamentos.",
     },
-    history: "sydney",
+    history: "vitable",
   },
   {
     title: { en: "Abitari · Website redesign", es: "Abitari · Rediseño de la web" },
@@ -339,7 +370,7 @@ export const earlier = [
       en: "Customer segmentation and competitive research behind a redesign that increased leads by 225%.",
       es: "Segmentación de clientes y análisis de competencia detrás de un rediseño que subió los leads un 225%.",
     },
-    history: "growth",
+    history: "abitari",
   },
 ];
 

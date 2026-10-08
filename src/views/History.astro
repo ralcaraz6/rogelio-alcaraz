@@ -11,7 +11,7 @@ const title = t(item.title, lang);
     <header class="page-intro">
       <a class="back-link" href={`${href(lang, "/")}#about-heading`}>{copy.backToHistory}</a>
       <p class="folio">{t(item.period, lang)}</p>
-      <h1>{title}</h1>
+      <h1>{title} <span class="flag">{item.flag}</span></h1>
       <div class="history-body">
         {t(item.body, lang).map((para) => <p>{para}</p>)}
         {item.link && <p><a href={item.link}>{copy.visit}</a></p>}
