@@ -1,0 +1,55 @@
+---
+import Base from "../layouts/Base.astro";
+import ProjectEntry from "../components/ProjectEntry.astro";
+import EarlierWork from "../components/EarlierWork.astro";
+import BriefingTechnical from "../components/BriefingTechnical.astro";
+import NoteIndex from "../components/NoteIndex.astro";
+import { site, ui, history, builds, t, href } from "../content.js";
+
+const { lang } = Astro.props;
+const copy = ui[lang];
+---
+<Base lang={lang} title={copy.homeTitle} path="/" section="index">
+  <article class="portfolio-document page-shell">
+    <header class="document-intro">
+      <p class="folio">{copy.folio}</p>
+      <h1>{site.name}</h1>
+      <p class="document-description">{copy.intro}</p>
+      <p class="meta">
+        <a href={site.github}>GitHub ↗</a> · <a href={site.linkedin}>LinkedIn ↗</a> · <a href={`mailto:${site.email}`}>{site.email}</a>
+      </p>
+    </header>
+
+    <section class="document-section" aria-labelledby="about-heading">
+      <h2 id="about-heading">{copy.about}</h2>
+      <p class="history-background">{copy.background}</p>
+      <ol class="career-history" aria-label={copy.workHistory}>
+        {history.map((item) => (
+          <li>
+            <a class="history-entry" href={href(lang, `/about/${item.slug}/`)}>
+              <span class="meta history-period">{t(item.period, lang)}</span>
+              <span class="history-title">{t(item.title, lang)}<span aria-hidden="true"> →</span></span>
+              <span class="history-summary">{t(item.summary, lang)}</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="document-section" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">{copy.projects}</h2>
+      <div class="project-index">
+        {builds.map((build) => <ProjectEntry build={build} lang={lang} />)}
+      </div>
+    </section>
+
+    <EarlierWork lang={lang} />
+
+    <BriefingTechnical lang={lang} />
+
+    <section class="document-section" aria-labelledby="notes-heading">
+      <h2 id="notes-heading">{copy.notes}</h2>
+      <NoteIndex lang={lang} />
+    </section>
+  </article>
+</Base>

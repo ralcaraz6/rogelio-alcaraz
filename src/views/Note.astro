@@ -1,0 +1,50 @@
+---
+import Base from "../layouts/Base.astro";
+import { site, ui, notes, t, href, findBuild } from "../content.js";
+
+const { lang, note, previous, next } = Astro.props;
+const copy = ui[lang];
+const title = t(note.title, lang);
+const related = findBuild(note.related);
+const anchor = (text) =>
+  text.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+---
+<Base lang={lang} title={`${title} · ${site.name}`} description={t(note.thesis, lang)} path={`/notes/${note.slug}/`} section="notes">
+  <article class="note-page page-shell">
+    <header class="note-header">
+      <p class="folio">{copy.noteFolio(note.minutes)}</p>
+      <h1>{title}</h1>
+      <p class="note-thesis">{t(note.thesis, lang)}</p>
+    </header>
+    <div class="note-body">
+      {note.sections.map((section) => (
+        <>
+          <h2 id={anchor(t(section.heading, lang))}>{t(section.heading, lang)}</h2>
+          {t(section.paras, lang).map((para) => <p>{para}</p>)}
+        </>
+      ))}
+    </div>
+    {related && (
+      <aside class="note-related-build" aria-label={copy.relatedProject}>
+        <p>
+          <span class="folio">{copy.relatedProject}</span> <a href={href(lang, `/builds/${related.slug}/`)}>{t(related.title, lang)} <span aria-hidden="true">↗</span></a>
+        </p>
+      </aside>
+    )}
+    <nav class="note-navigation" aria-label="Note navigation">
+      {previous && (
+        <a href={href(lang, `/notes/${previous.slug}/`)}>
+          <span class="folio">{copy.previous}</span>
+          <strong>← {t(previous.title, lang)}</strong>
+        </a>
+      )}
+      {next && (
+        <a href={href(lang, `/notes/${next.slug}/`)}>
+          <span class="folio">{copy.next}</span>
+          <strong>{t(next.title, lang)} →</strong>
+        </a>
+      )}
+    </nav>
+    <p><a class="back-link" href={href(lang, "/notes/")}>{copy.backToNotes}</a></p>
+  </article>
+</Base>

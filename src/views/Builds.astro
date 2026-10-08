@@ -1,0 +1,20 @@
+---
+import Base from "../layouts/Base.astro";
+import ProjectEntry from "../components/ProjectEntry.astro";
+import EarlierWork from "../components/EarlierWork.astro";
+import { site, ui, builds } from "../content.js";
+
+const { lang } = Astro.props;
+const copy = ui[lang];
+---
+<Base lang={lang} title={`${copy.projects} · ${site.name}`} path="/builds/" section="builds">
+  <section class="page-shell">
+    <header class="page-intro">
+      <h1>{copy.projects}</h1>
+    </header>
+    <div class="project-index">
+      {builds.map((build) => <ProjectEntry build={build} lang={lang} />)}
+    </div>
+    <EarlierWork lang={lang} />
+  </section>
+</Base>

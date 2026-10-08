@@ -1,0 +1,21 @@
+---
+import Base from "../layouts/Base.astro";
+import { site, ui, history, t, href } from "../content.js";
+
+const { lang, item } = Astro.props;
+const copy = ui[lang];
+const title = t(item.title, lang);
+---
+<Base lang={lang} title={`${title} · ${site.name}`} description={t(item.summary, lang)} path={`/about/${item.slug}/`}>
+  <article class="page-shell">
+    <header class="page-intro">
+      <a class="back-link" href={`${href(lang, "/")}#about-heading`}>{copy.backToHistory}</a>
+      <p class="folio">{t(item.period, lang)}</p>
+      <h1>{title}</h1>
+      <div class="history-body">
+        {t(item.body, lang).map((para) => <p>{para}</p>)}
+        {item.link && <p><a href={item.link}>{copy.visit}</a></p>}
+      </div>
+    </header>
+  </article>
+</Base>

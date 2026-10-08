@@ -1,0 +1,7 @@
+---
+import Note from "../../../views/Note.astro";
+import { notePaths } from "../../../content.js";
+
+export const getStaticPaths = () => notePaths("es");
+---
+<Note {...Astro.props} />

@@ -1,0 +1,16 @@
+---
+import { briefingTechnical, t, ui } from "../content.js";
+
+const { lang } = Astro.props;
+---
+<section class="technical-evidence" aria-labelledby="technical-heading">
+  <h2 id="technical-heading">{ui[lang].technicalHeading}</h2>
+  <dl class="engineering-list">
+    {briefingTechnical.map((item) => (
+      <div>
+        <dt>{t(item.term, lang)}</dt>
+        {t(item.paras, lang).map((para) => <dd>{para}</dd>)}
+      </div>
+    ))}
+  </dl>
+</section>

@@ -1,0 +1,16 @@
+---
+import Base from "../layouts/Base.astro";
+import NoteIndex from "../components/NoteIndex.astro";
+import { site, ui } from "../content.js";
+
+const { lang } = Astro.props;
+const copy = ui[lang];
+---
+<Base lang={lang} title={`${copy.notes} · ${site.name}`} path="/notes/" section="notes">
+  <section class="page-shell">
+    <header class="page-intro">
+      <h1>{copy.notes}</h1>
+    </header>
+    <NoteIndex lang={lang} />
+  </section>
+</Base>

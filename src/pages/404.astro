@@ -1,0 +1,13 @@
+---
+import Base from "../layouts/Base.astro";
+import { site, ui, href } from "../content.js";
+
+const copy = ui.en;
+---
+<Base lang="en" title={`404 · ${site.name}`} path="/">
+  <section class="page-shell error-page">
+    <h1>404</h1>
+    <p>{copy.notFound}</p>
+    <p><a class="back-link" href={href("en", "/")}>{copy.backHome}</a></p>
+  </section>
+</Base>

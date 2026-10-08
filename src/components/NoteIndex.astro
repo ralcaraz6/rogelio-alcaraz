@@ -1,0 +1,14 @@
+---
+import { notes, t, href, ui } from "../content.js";
+
+const { lang } = Astro.props;
+---
+<div class="note-index">
+  {notes.map((note) => (
+    <a class="note-row" href={href(lang, `/notes/${note.slug}/`)}>
+      <span class="note-row-title">{t(note.title, lang)}</span>
+      <span class="meta">{ui[lang].min(note.minutes)}</span>
+      <span class="note-row-thesis">{t(note.thesis, lang)}</span>
+    </a>
+  ))}
+</div>

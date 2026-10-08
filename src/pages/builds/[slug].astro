@@ -1,0 +1,7 @@
+---
+import Build from "../../views/Build.astro";
+import { buildPaths } from "../../content.js";
+
+export const getStaticPaths = () => buildPaths("en");
+---
+<Build {...Astro.props} />

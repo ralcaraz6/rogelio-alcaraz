@@ -1,0 +1,78 @@
+---
+import "@fontsource-variable/inter";
+import "../styles/site.css";
+import { site, ui, href } from "../content.js";
+
+const { lang, title, description, path, section } = Astro.props;
+const copy = ui[lang];
+const pageDescription = description ?? copy.description;
+const canonical = new URL(href(lang, path), site.url).href;
+const alternates = {
+  en: new URL(href("en", path), site.url).href,
+  es: new URL(href("es", path), site.url).href,
+};
+const image = new URL("/avatar.png", site.url).href;
+const navItems = [
+  { key: "index", number: "00", path: "/" },
+  { key: "builds", number: "02", path: "/builds/" },
+  { key: "notes", number: "03", path: "/notes/" },
+];
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fafaf8" />
+    <title>{title}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={alternates.en} />
+    <link rel="alternate" hreflang="es" href={alternates.es} />
+    <link rel="alternate" hreflang="x-default" href={alternates.en} />
+    <link rel="alternate" type="application/rss+xml" title={`${site.name} RSS`} href="/rss.xml" />
+    <link rel="icon" type="image/png" href="/avatar.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={image} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">{copy.skip}</a>
+    <header class="site-header">
+      <a class="site-mark" href={href(lang, "/")}>{site.name}</a>
+      <div class="site-header-actions">
+        <nav class="site-nav" aria-label="Primary navigation">
+          {navItems.map((item) => (
+            <a href={href(lang, item.path)} aria-current={section === item.key ? "page" : undefined}>
+              <span aria-hidden="true">{item.number}</span> {copy.nav[item.key]}
+            </a>
+          ))}
+        </nav>
+        <nav class="language-switcher" aria-label="Language">
+          <a href={href("en", path)} lang="en" aria-label={copy.languages.en} aria-current={lang === "en" ? "page" : undefined}>EN</a>
+          <span aria-hidden="true">/</span>
+          <a href={href("es", path)} lang="es" aria-label={copy.languages.es} aria-current={lang === "es" ? "page" : undefined}>ES</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main-content">
+      <slot />
+    </main>
+    <footer class="contact-footer">
+      <p>
+        <a href={`mailto:${site.email}`}>{site.email}</a> · <a href={site.algoryme}>Algoryme ↗</a>
+      </p>
+      <nav aria-label="Social links">
+        <a href={site.github}>GitHub</a>
+        <a href={site.linkedin}>LinkedIn</a>
+      </nav>
+      <p>{copy.footerCta} <a href={`mailto:${site.email}`}>{copy.getInTouch}</a>.</p>
+    </footer>
+  </body>
+</html>

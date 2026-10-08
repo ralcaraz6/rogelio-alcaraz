@@ -1,0 +1,18 @@
+---
+import { t, href, ui } from "../content.js";
+
+const { build, lang } = Astro.props;
+const copy = ui[lang];
+const link = href(lang, `/builds/${build.slug}/`);
+---
+<article class="project-entry">
+  <header>
+    <h3><a href={link}>{t(build.title, lang)}</a></h3>
+    <span class="meta">{t(build.status, lang)}</span>
+  </header>
+  <p>{t(build.lead, lang)}</p>
+  {t(build.work, lang).map((para) => <p>{para}</p>)}
+  <div class="project-links">
+    <a href={link}>{copy.details}</a>
+  </div>
+</article>

@@ -1,0 +1,30 @@
+---
+import Base from "../layouts/Base.astro";
+import BriefingTechnical from "../components/BriefingTechnical.astro";
+import { site, ui, builds, t, href } from "../content.js";
+
+const { lang, build, next } = Astro.props;
+const copy = ui[lang];
+const title = t(build.title, lang);
+---
+<Base lang={lang} title={`${title} · ${copy.projects}`} description={t(build.lead, lang)} path={`/builds/${build.slug}/`} section="builds">
+  <section class="build-detail page-shell">
+    <a class="back-link" href={href(lang, "/builds/")}>{copy.allProjects}</a>
+    <article class="project-document">
+      <header>
+        <p class="meta">{t(build.role, lang)} · {t(build.status, lang)}</p>
+        <h1>{title}</h1>
+        <p>{t(build.lead, lang)}</p>
+      </header>
+      <section class="project-work">
+        <h2>{copy.myWork}</h2>
+        {t(build.work, lang).map((para) => <p>{para}</p>)}
+      </section>
+      <p class="meta">{t(build.status_note, lang)}</p>
+      {build.technical && <BriefingTechnical lang={lang} />}
+      <nav class="project-navigation" aria-label="Project navigation">
+        <a href={href(lang, `/builds/${next.slug}/`)}>{t(next.title, lang)} →</a>
+      </nav>
+    </article>
+  </section>
+</Base>

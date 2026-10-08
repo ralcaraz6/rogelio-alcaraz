@@ -1,0 +1,19 @@
+---
+import { earlier, t, href, ui } from "../content.js";
+
+const { lang } = Astro.props;
+const copy = ui[lang];
+---
+<section class="document-section client-work" id="earlier-work" aria-labelledby="earlier-heading">
+  <h2 id="earlier-heading">{copy.earlierHeading}</h2>
+  {copy.earlierIntro.map((para) => <p>{para}</p>)}
+  <div class="client-list">
+    {earlier.map((item) => (
+      <article class="client-entry">
+        <h3>{t(item.title, lang)}</h3>
+        <p>{t(item.text, lang)}</p>
+        {item.history && <a class="back-link" href={href(lang, `/about/${item.history}/`)}>{copy.seeHistory}</a>}
+      </article>
+    ))}
+  </div>
+</section>

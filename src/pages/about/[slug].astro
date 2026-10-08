@@ -1,0 +1,7 @@
+---
+import History from "../../views/History.astro";
+import { historyPaths } from "../../content.js";
+
+export const getStaticPaths = () => historyPaths("en");
+---
+<History {...Astro.props} />
